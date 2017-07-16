@@ -6,19 +6,24 @@ import { Header, Accordion, Icon, Container } from 'semantic-ui-react'
 import reviews from '../review'
 
 class AlbumInfo extends Component {
-    componentDidMount() {
-        //console.log("LOOK HERE")
-        //console.log(this.props)
-        this.setState({fetched : false})
-    }
-    componentWillReceiveProps(props) {
+    fetchAlbumOnMount(props) {
         const { dispatch } = this.props
-        //console.log(props.albumData.hasOwnProperty('name'))
         if (props.token && !this.state.fetched && !props.albumData.hasOwnProperty('name')) {
             //If there is no data and the token has been assigned, request album data
             dispatch(fetchAlbum(this.props.albumID))
-            this.state.fetched = true
+            this.setState({fetched : true})
         }
+    }
+    componentWillMount() {
+        this.setState({fetched : false})
+    }
+    componentDidMount() {
+        //Try to fetch the album when the componnent is mounting
+        this.fetchAlbumOnMount(this.props)
+    }
+    componentWillReceiveProps(props) {
+        //Try again to fetch if global state changes, ie token received
+        this.fetchAlbumOnMount(props)
     }
     render() {
         images = []
