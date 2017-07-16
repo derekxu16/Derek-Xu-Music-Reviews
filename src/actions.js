@@ -40,7 +40,8 @@ function receiveAlbum(id, json) {
 function fetchArtist() {}
 
 export function fetchToken() {
-    return dispatch => fetch('http://127.0.0.1:5000/authSpotify')
+    // return dispatch => fetch('http://127.0.0.1:5000/authSpotify') LOCAL
+    return dispatch => fetch('https://plumsauce.pythonanywhere.com/authSpotify') //PRODUCTION
      .then((response) => response.json())
       .then(json => dispatch(receiveToken(json.access_token)))
 }

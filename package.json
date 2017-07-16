@@ -2,7 +2,9 @@
   "name": "music-reviews",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://plumsauc3.github.io/Derek-Xu-Music-Reviews",
   "dependencies": {
+    "gh-pages": "^1.0.0",
     "isomorphic-fetch": "^2.2.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -21,6 +23,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
