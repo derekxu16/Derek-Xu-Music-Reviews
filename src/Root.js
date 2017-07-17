@@ -5,7 +5,6 @@ import App from './App'
 import appReducer from './reducers/appReducer'
 import { createStore, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
-import auth from './auth'
 
 const store = createStore(appReducer,{token : ""},
     applyMiddleware(thunkMiddleware)
