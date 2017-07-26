@@ -25,7 +25,7 @@ class App extends Component {
             this.setState({albumList : [URIDict.BonitoGeneration, URIDict.CollegeDropout, URIDict.HelplessnessBlues, URIDict.OKComputer]})
         } else {
             //Current favourite albums
-            this.setState({albumList : ['2B87zXm9bOWvAJdkJBTpzF', '0dAMC0nNikIjhD8LeRZfhH', '0Svz8ykbdCSdXnr65cPUnG', '0xtTojp4zfartyGtbFKN3v']})
+            this.setState({albumList : ['2B87zXm9bOWvAJdkJBTpzF', '0dAMC0nNikIjhD8LeRZfhH', '2nkto6YNI4rUYTLqEwWJ3o', '0Svz8ykbdCSdXnr65cPUnG', '0xtTojp4zfartyGtbFKN3v']})
         }
     }
     componentWillMount() {
